@@ -19,7 +19,7 @@ if [ -n "$isConnected" ]; then
         isConnected="$(xrandr -q | grep "HDMI-2 connected")"
         if [ -n "$isConnected" ]; then
                 mode="$(xrandr -q | grep -A1 "HDMI-1 connected" | tail -1 | awk '{ print $1 }')"
-                # Move the monitor to the left and set it in the middle of the top screen
+                # Move the monitor to the left and center it on the left side 
                 xrandr --output HDMI-1 --mode $mode --pos 0x90
         fi
 fi
